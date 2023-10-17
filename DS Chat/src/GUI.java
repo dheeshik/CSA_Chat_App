@@ -34,6 +34,12 @@ public class GUI {
         panel.add(tf);
         panel.add(send);
         panel.add(reset);
+        JLabel sid = new JLabel("Sid loves men", null, SwingConstants.CENTER);
+        sid.setForeground(Color.WHITE);
+        panel.setBackground(Color.decode("#B5BAD0"));
+        panel.add(sid);
+
+        menuBar.setBackground(Color.decode("#B5BAD0"));
 
         // Text Area at the Center
         JTextArea ta = new JTextArea();
@@ -45,3 +51,4 @@ public class GUI {
         frame.setVisible(true);
     }
 }
+
