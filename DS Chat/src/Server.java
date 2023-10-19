@@ -25,6 +25,7 @@ public class Server {
         // -------------------------------------------------------------------------------------------------
         try {
             serverSocket = new ServerSocket(6000);
+            System.out.println("-------------- CHAT SERVER HOST: ONLINE --------------");
             clientSocket = serverSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream());
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
