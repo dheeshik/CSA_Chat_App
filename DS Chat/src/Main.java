@@ -4,8 +4,5 @@ public class Main {
       Server server = new Server();
       server.runServer();
 
-      Client client = new Client();
-      client.runClient();
-
     }
 }
