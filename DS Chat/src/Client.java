@@ -15,11 +15,11 @@ public class Client {
     Scanner sc = new Scanner(System.in);
 
     // Class constructor
-    public Client() {
+    public Client(String connectionIP) {
 
         try {
             // Create socket, input, and output variables
-            cliSocket = new Socket("127.0.0.1", 6969);
+            cliSocket = new Socket(connectionIP, 6969);
             pr = new PrintWriter(cliSocket.getOutputStream());
             br = new BufferedReader(new InputStreamReader(cliSocket.getInputStream()));
 
@@ -36,7 +36,6 @@ public class Client {
 
                 }
             });
-            send.start();
 
             // Create new thread for receiver
             receive = new Thread(new Runnable() {
@@ -47,7 +46,7 @@ public class Client {
 
                         // Continues to display server messages until message is null
                         while (message != null) {
-                            System.out.println("Server: ");
+                            System.out.println("Server: " +  message);
                             message = br.readLine();
                         }
                         br.close();
@@ -58,7 +57,6 @@ public class Client {
 
                 }
             });
-            receive.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
