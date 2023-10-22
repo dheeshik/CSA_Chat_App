@@ -24,7 +24,7 @@ public class Server {
         // try to create start a server on socket 6000
         // -------------------------------------------------------------------------------------------------
         try {
-            serverSocket = new ServerSocket(6000);
+            serverSocket = new ServerSocket(6969);
             System.out.println("-------------- CHAT SERVER HOST: ONLINE --------------");
             clientSocket = serverSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream());
