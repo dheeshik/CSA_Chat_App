@@ -15,11 +15,11 @@ public class Client {
     Scanner sc = new Scanner(System.in);
 
     // Class constructor
-    public Client(String connectionIP) {
+    public Client(String connectionIP, int port) {
 
         try {
             // Create socket, input, and output variables
-            cliSocket = new Socket(connectionIP, 6969);
+            cliSocket = new Socket(connectionIP, port);
             pr = new PrintWriter(cliSocket.getOutputStream());
             br = new BufferedReader(new InputStreamReader(cliSocket.getInputStream()));
 

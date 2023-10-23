@@ -18,14 +18,14 @@ public class Server {
     Scanner sc = new Scanner(System.in);
 
     
-    public Server(){
+    public Server(int port){
         
         
-        // try to create start a server on socket 6000
+        // try to start a server on socket 6000
         // -------------------------------------------------------------------------------------------------
         try {
-            serverSocket = new ServerSocket(6969);
-            System.out.println("-------------- CHAT SERVER HOST: ONLINE --------------");
+            serverSocket = new ServerSocket(port);
+            System.out.println("-------------- CHAT SERVER: ONLINE --------------");
             clientSocket = serverSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream());
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -58,7 +58,7 @@ public class Server {
                     msg = in.readLine();
 
                     while(msg != null){
-                        System.out.println("Client () " + msg);
+                        System.out.println("Client:  " + msg.trim().toLowerCase());
                         msg = in.readLine();
                     }
 
