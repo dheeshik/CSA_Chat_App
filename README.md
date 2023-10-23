@@ -3,6 +3,7 @@
 
 A simple chat app created in java
 
-```
-to use just uncomment the either the client or unclient code and make sure that the IP and PORT are correctly declared.
-```
+
+ to use:
+ - uncomment the Client or Server initialization and make sure that the IP and PORT are correctly declared.
+
